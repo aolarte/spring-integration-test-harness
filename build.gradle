@@ -1,0 +1,39 @@
+apply plugin: 'java'
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath(group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: springBootVersion)
+    }
+}
+
+
+apply plugin: 'org.springframework.boot'
+
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-activemq', version: springBootVersion
+
+
+    compile group: 'org.springframework.integration', name: 'spring-integration-java-dsl', version: springIntegrationDSLVersion
+
+    compile group: 'org.springframework.integration', name: 'spring-integration-core', version: springIntegrationVersion
+    compile group: 'org.springframework.integration', name: 'spring-integration-file', version: springIntegrationVersion
+    compile group: 'org.springframework.integration', name: 'spring-integration-jms', version: springIntegrationVersion
+
+    compile group: 'org.apache.activemq', name: 'activemq-broker', version: activeMQVersion
+
+}
