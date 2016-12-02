@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SendController {
 
-//    @Autowired
-//    private ISender sender;
+    @Autowired
+    private ISender sender;
 
     @RequestMapping(value = "/send/{msg}" )
     public void send(@PathVariable("msg") String msg) {
-       // sender.sendMessage(msg);
+        sender.sendMessage(msg);
     }
 }
